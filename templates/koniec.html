@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gra Wisielec - Koniec</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      .koniec {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      .wynik {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #f00;
+      }
+
+      .przycisk {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gra Wisielec - Koniec</h1>
+    <p class="koniec">Wykorzystane słowo: {{ slowo }}</p>
+    {% if bledy >= 7 %}
+    <p class="wynik">Nie udało się odgadnąć słowa. Przegrałeś!</p>
+    {% else %}
+    <p class="wynik">Brawo! Odgadłeś słowo!</p>
+    {% endif %}
+    <p>Ukryte słowo: {{ ukryte_slowo }}</p>
+    <p>Liczba błędów: {{ bledy }}</p>
+  </body>
+</html>
