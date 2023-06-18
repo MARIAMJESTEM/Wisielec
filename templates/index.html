@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gra Wisielec</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      .slowo {
+        font-size: 24px;
+        letter-spacing: 10px;
+        margin-bottom: 20px;
+      }
+
+      .bledy {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #f00;
+      }
+
+      .wykorzystane-litery {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+
+      input[type="text"] {
+        padding: 5px;
+        font-size: 16px;
+        width: 50px;
+      }
+
+      button {
+        padding: 5px 10px;
+        font-size: 16px;
+      }
+
+      /* Style dla szubienicy */
+      .szubienica {
+        font-family: monospace;
+        font-size: 16px;
+        white-space: pre;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gra Wisielec</h1>
+
+    <p class="slowo">
+      {% for litera in slowo %} {{ litera }}&nbsp; {% endfor %}
+    </p>
+    <p class="bledy">Błędy: {{ bledy }}/7</p>
+    <p class="wykorzystane-litery">Wykorzystane litery: {{ wykorzystane }}</p>
+    <form method="POST">
+      <input type="text" name="litera" maxlength="1" required />
+      <button type="submit">Zgadnij</button>
+    </form>
+    <p class="szubienica">
+      <!-- Wyświetlanie szubienicy -->
+      {% for linia in szubienica %} {{ linia }}<br />
+      {% endfor %}
+    </p>
+  </body>
+</html>
